@@ -11,7 +11,7 @@ angular.module('insight.address').controller('AddressController',
       socket.emit('subscribe', $routeParams.addrStr);
       socket.on($routeParams.addrStr, function(tx) {
         $rootScope.$broadcast('tx', tx);
-        var beep = new Audio('/sound/transaction.mp3');
+        var beep = new Audio('sound/transaction.mp3');
         beep.play();
       });
     };
